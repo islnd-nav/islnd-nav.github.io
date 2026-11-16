@@ -1,5 +1,7 @@
 # Islnd
 
+<img width="100%" src="https://github.com/user-attachments/assets/89311cd3-6aac-4245-9665-92931d42847f" />
+
 A floating bar at the bottom centre of every page: site favicon and domain, address, search, back, forward, reload, home, new tab, close tab and commands typed after `/`.
 
 It works in any Chromium-based browser that supports Manifest V3 extensions.
