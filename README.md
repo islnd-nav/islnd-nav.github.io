@@ -106,21 +106,6 @@ Right-click the Islnd icon in the toolbar › **Options**, or open the extension
 - **⌘L** opens Islnd (Ctrl+L on Windows and Linux); the commands and links have their own shortcuts, such as **⇧⌘L** for Minimize Islnd (see [Commands](#commands)). Islnd handles them itself, on web pages (embedded editors included), before the page's and the browser's own shortcuts. Browsers never let an extension take over their own keys on their own pages, so there they keep the browser's meaning. On excluded sites, where Islnd is not loaded, and during full-screen video, all of them are left to the page.
 - To change them, open the settings › **Shortcuts** (⌘L) or **Commands** (the others), click the key and press the new combination: it needs ⌘ (Ctrl on Windows and Linux) together with another key, and it can add ⇧, ⌥ or ⌃. **Esc** cancels, **⌫** removes a command's shortcut. Not accepted: the keys for editing text (⌘A, ⌘C, ⌘V, ⌘X, ⌘Z), a combination already used by Islnd or by one of the browser's shortcuts listed in Commands, and the browser's keys that never reach a page, such as ⌘T or ⌘W.
 
-## Hiding the browser's toolbar
-
-An extension cannot hide or change the browser's own toolbar. To use only Islnd on a Mac:
-
-1. Put the browser in full screen (**⌃⌘F**).
-2. In the **View** menu, untick **Always Show Toolbar in Full Screen**.
-
-The toolbar comes back when you move the mouse to the top of the screen. The exact menu name can vary from browser to browser.
-
-## Limitations
-
-- Extensions cannot act on the browser's internal pages (the new tab page included), the extension store and some other protected pages: Islnd is not there.
-- Sites with fixed bars at the bottom (cookie banners, support chats) can end up under Islnd.
-- Local files (`file://`) show Islnd only if **Allow access to file URLs** is on in the extensions page › Islnd › Details.
-
 ## License
 
 [MIT](https://github.com/islnd-nav/islnd-nav.github.io/blob/main/LICENSE)
