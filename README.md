@@ -128,10 +128,12 @@ It needs Node.js 22.2 or later.
 npm install
 npm test -- <browser executable> [label] [pipe]
 npm run package
+npm run sync
 ```
 
 - `npm test` runs the end-to-end test, `test/e2e.mjs`: it loads `src/` into the given browser, headless, opens a local test server and checks every feature. The screenshots of the run go to `test/out/<label>`. Add `pipe` for browsers that no longer load an extension with `--load-extension`.
 - `npm run package` makes `dist/Islnd-<version>.zip` from `src/`, with `manifest.json` at the root of the archive, ready for an extension store. The version is the one in `src/manifest.json`.
+- `npm run sync` copies the texts that appear in more than one place from their source: the description in `src/manifest.json` to `package.json`, `store/listing.md` and the settings page; `README.md` and `store/privacy.md` to the GitHub Page repository, expected next to this one in `../islnd-nav.github.io`. Add `-- --check` to only list the copies that differ.
 - `store/` holds the texts of the store listing and the privacy policy; [CHANGELOG.md](https://github.com/islnd-nav/islnd/blob/main/CHANGELOG.md) the changes of each version.
 
 ## Files
