@@ -25,4 +25,4 @@ Islnd does not collect, send or sell any data. It has no server, no account, no 
 
 ## Contact
 
-Questions and reports: https://github.com/islnd-nav/islnd/issues
+Questions and reports: https://github.com/islnd-nav/islnd-nav.github.io/issues

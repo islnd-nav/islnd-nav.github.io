@@ -8,12 +8,13 @@ It works in any Chromium-based browser that supports Manifest V3 extensions.
 
 ## Installation
 
-1. Open the browser's extensions page: type `chrome://extensions` in the address bar (Chromium-based browsers accept this address even when they use their own name for it).
-2. Turn on **Developer mode**.
-3. Click **Load unpacked** and choose the `src` folder of the [Islnd repository](https://github.com/islnd-nav/islnd).
-4. Tabs that are already open get Islnd straight away, without reloading them.
+1. Download the zip of the [latest release](https://github.com/islnd-nav/islnd-nav.github.io/releases/latest) and unzip it.
+2. Open the browser's extensions page: type `chrome://extensions` in the address bar (Chromium-based browsers accept this address even when they use their own name for it).
+3. Turn on **Developer mode**.
+4. Click **Load unpacked** and choose the unzipped folder.
+5. Tabs that are already open get Islnd straight away, without reloading them.
 
-After changing the files, click the reload icon on the extension's card in the extensions page.
+To update Islnd, unzip a newer release into the same folder and click the reload icon on the extension's card in the extensions page.
 
 ## Usage
 
@@ -120,39 +121,6 @@ The toolbar comes back when you move the mouse to the top of the screen. The exa
 - Sites with fixed bars at the bottom (cookie banners, support chats) can end up under Islnd.
 - Local files (`file://`) show Islnd only if **Allow access to file URLs** is on in the extensions page › Islnd › Details.
 
-## Development
-
-It needs Node.js 22.2 or later.
-
-```sh
-npm install
-npm test -- <browser executable> [label] [pipe]
-npm run package
-npm run sync
-```
-
-- `npm test` runs the end-to-end test, `test/e2e.mjs`: it loads `src/` into the given browser, headless, opens a local test server and checks every feature. The screenshots of the run go to `test/out/<label>`. Add `pipe` for browsers that no longer load an extension with `--load-extension`.
-- `npm run package` makes `dist/Islnd-<version>.zip` from `src/`, with `manifest.json` at the root of the archive, ready for an extension store. The version is the one in `src/manifest.json`.
-- `npm run sync` copies the texts that appear in more than one place from their source: the description in `src/manifest.json` to `package.json`, `store/listing.md` and the settings page; `README.md` and `store/privacy.md` to the GitHub Page repository, expected next to this one in `../islnd-nav.github.io`. Add `-- --check` to only list the copies that differ.
-- `store/` holds the texts of the store listing and the privacy policy; [CHANGELOG.md](https://github.com/islnd-nav/islnd/blob/main/CHANGELOG.md) the changes of each version.
-
-## Files
-
-The extension is in `src/`:
-
-| File | What it does |
-|---|---|
-| `manifest.json` | Name, version, permissions, scripts |
-| `settings.js` | Default settings, reading and saving (used by all the other files) |
-| `options.html`, `options.css`, `options.js` | The settings page |
-| `commands.js` | The "/" commands: names, icons, presets, shortcuts, search, clean URLs (used by Islnd, the background and the settings) |
-| `content.js` | Islnd inside pages (styles isolated in a closed Shadow DOM) |
-| `frames.js` | Passes ⌘L and the shortcuts of commands and links from embedded frames (editors, embedded apps) to Islnd; loaded into a frame only when it gets the focus |
-| `background.js` | Tells addresses from searches, runs navigation and commands, takes screenshots, keeps the toolbar icon on where Islnd works |
-| `screenshot.html`, `screenshot.css`, `screenshot.js` | The tab that shows a screenshot |
-| `screenshots.js` | Keeps the latest screenshots until their tab shows them (the browser's storage for the extension) |
-| `icons/` | Extension icons |
-
 ## License
 
-[MIT](https://github.com/islnd-nav/islnd/blob/main/LICENSE)
+[MIT](https://github.com/islnd-nav/islnd-nav.github.io/blob/main/LICENSE)
