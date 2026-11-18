@@ -28,7 +28,7 @@ To update Islnd, unzip a newer release into the same folder and click the reload
 | Cancel | **Esc**, or click outside Islnd |
 | Back, forward, reload | Buttons on the left |
 | Go to the home page | The **Home** button (the house): opens the new tab page, or the page chosen in the settings |
-| Bring back Islnd when hidden | Scroll up, or move the mouse to the bottom of the window |
+| Bring back Islnd after it slides away | Scroll up, or move the mouse to the bottom of the window |
 | Minimize or restore Islnd | **⇧⌘L** (Ctrl+Shift+L on Windows and Linux), or the key chosen in the settings |
 
 Resting the mouse on a button shows its name. Islnd slides away when you scroll down and comes back when you scroll up. Searches use the browser's default search engine.
@@ -51,7 +51,7 @@ Type **/** at the start of the field and the list of commands opens above Islnd 
 | Page | Zoom in, Zoom out, Reset zoom, Print, Screenshot, Full page screenshot, Scroll to top, Scroll to bottom |
 | Bookmarks | Bookmark page (into the bookmarks bar) / Remove bookmark |
 | Browser | New window, New private window, History, Downloads, Bookmarks, Extensions, Browser settings |
-| Islnd | Islnd settings, Minimize Islnd / Restore Islnd, Move Islnd to top / Move Islnd to bottom (the Position setting), Switch to dark theme / Switch to light theme (the Theme setting; from Automatic, the opposite of the one shown), Hide on this site (adds the site to the excluded sites: Islnd leaves its open tabs at once) |
+| Islnd | Islnd settings, Minimize Islnd / Restore Islnd, Hide Islnd / Show Islnd, Move Islnd to top / Move Islnd to bottom (the Position setting), Switch to dark theme / Switch to light theme (the Theme setting; from Automatic, the opposite of the one shown), Hide on this site (adds the site to the excluded sites: Islnd leaves its open tabs at once) |
 
 In the settings › **Commands** each command can be turned off or moved: the list shows them in that order, and while you type the best matches come first. On the right of a command the list shows its shortcut, when there is one: the browser's default shortcut for the same action (on Windows and Linux they use Ctrl and Alt), or Islnd's own.
 
@@ -66,6 +66,8 @@ Names that depend on the tab follow it: on a pinned tab the list shows Unpin tab
 **Screenshot** takes the visible part of the page, **Full page screenshot** the whole page from top to bottom: the page scrolls by itself, one screenful at a time, and the pieces are joined (on a long page it takes a few seconds). Islnd is never in the picture, and fixed bars (a site's header, a cookie banner) appear only once, at the top. On web apps where only a part of the window scrolls, the full page is that part. Very long pages stop at 32,767 screen pixels, the biggest image the browser can build (about 16,000 px of page on a Retina screen). The picture opens in a new tab, with **Copy** and **Save** (a PNG file named after the site and the time).
 
 **Minimize Islnd** shrinks Islnd to a small circle with the site's favicon, on every page and after reloading too, until **Restore Islnd**. Resting the mouse on the circle opens Islnd in full; it shrinks back shortly after the mouse leaves. ⌘L and a command's confirmation open it as well. The circle hides while scrolling like Islnd, and shows Islnd's icon when Site favicon is off.
+
+**Hide Islnd** takes Islnd out of sight on every page, after reloading too, until **Show Islnd**. ⌘L, the toolbar icon and the shortcuts keep working: Islnd shows while you type in it, and for a moment with a command's confirmation.
 
 ## Settings
 
@@ -99,7 +101,7 @@ Right-click the Islnd icon in the toolbar › **Options**, or open the extension
 }
 ```
 
-`commands` lists the commands turned on, in their order, with links as title and address; all the others are turned off. `shortcuts` lists every shortcut in use, written as on a Mac or as on Windows and Linux (`Ctrl+Shift+L`); a command left out has none. An exported file also holds size, width, buttons, home page and the other switches. Anything missing from a file stays as it is, and what cannot be used (an unknown command, a shortcut already taken or the browser's own) is skipped and counted in the message. Not in the file: whether Islnd is minimized, and the links' favicons, read again from the sites.
+`commands` lists the commands turned on, in their order, with links as title and address; all the others are turned off. `shortcuts` lists every shortcut in use, written as on a Mac or as on Windows and Linux (`Ctrl+Shift+L`); a command left out has none. An exported file also holds size, width, buttons, home page and the other switches. Anything missing from a file stays as it is, and what cannot be used (an unknown command, a shortcut already taken or the browser's own) is skipped and counted in the message. Not in the file: whether Islnd is minimized or hidden, and the links' favicons, read again from the sites.
 
 ## Shortcuts
 
