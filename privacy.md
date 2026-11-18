@@ -1,6 +1,6 @@
 # Islnd privacy policy
 
-Last updated: 17 November 2026
+Last updated: 18 November 2026
 
 Islnd does not collect, send or sell any data. It has no server, no account, no analytics and no ads.
 
@@ -14,7 +14,8 @@ Islnd does not collect, send or sell any data. It has no server, no account, no 
 ## What it stores
 
 - **Settings**: in the browser's synced storage. If you sync your browser with an account, the browser syncs them like its own settings.
-- **Favicons of your links** and **screenshots waiting for their tab**: in the browser's local storage, on this device only.
+- **Favicons of your links**: in the browser's local storage, on this device only.
+- **Screenshots**: the latest ten, in the browser's local storage, on this device only, so their tab can show them again after a reload. Each one stays until ten newer screenshots replace it, or until Islnd is removed.
 - **Exported settings**: only in the file you save, where you choose.
 
 ## Network requests
