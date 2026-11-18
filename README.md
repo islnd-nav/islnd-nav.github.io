@@ -4,9 +4,11 @@ A floating bar at the bottom centre of every page: site favicon and domain, addr
 
 <img width="100%" src="https://github.com/user-attachments/assets/89311cd3-6aac-4245-9665-92931d42847f" />
 
-It works in any Chromium-based browser that supports Manifest V3 extensions.
+It works in any Chromium-based browser that supports Manifest V3 extensions, and in Firefox 140 or later.
 
 ## Installation
+
+In a Chromium-based browser:
 
 1. Download the zip of the [latest release](https://github.com/islnd-nav/islnd-nav.github.io/releases/latest) and unzip it.
 2. Open the browser's extensions page: type `chrome://extensions` in the address bar (Chromium-based browsers accept this address even when they use their own name for it).
@@ -15,6 +17,8 @@ It works in any Chromium-based browser that supports Manifest V3 extensions.
 5. Tabs that are already open get Islnd straight away, without reloading them.
 
 To update Islnd, unzip a newer release into the same folder and click the reload icon on the extension's card in the extensions page.
+
+In Firefox, install Islnd from its page on [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/islnd/): Firefox installs only extensions signed by Mozilla. Tabs that are already open get Islnd straight away there too.
 
 ## Usage
 
@@ -27,7 +31,7 @@ To update Islnd, unzip a newer release into the same folder and click the reload
 | Close the tab | The **×** button on the right |
 | Cancel | **Esc**, or click outside Islnd |
 | Back, forward, reload | Buttons on the left |
-| Go to the home page | The **Home** button (the house): opens the new tab page, or the page chosen in the settings |
+| Go to the home page | The **Home** button (the house): opens the new tab page (in Firefox, in a new tab), or the page chosen in the settings |
 | Bring back Islnd after it slides away | Scroll up, or move the mouse to the bottom of the window |
 | Minimize or restore Islnd | **⇧⌘L** (Ctrl+Shift+L on Windows and Linux), or the key chosen in the settings |
 
@@ -35,7 +39,7 @@ Resting the mouse on a button shows its name. Islnd slides away when you scroll 
 
 **History suggestions.** As you type an address or a search (not a "/" command), up to 10 pages of your history that match it appear, with favicon, title and the full address underneath: first the addresses that start with what you typed (`git` → github.com), then those with a word that does, then any match, the most visited and recent first. Nothing is selected at first, so **↩** goes to what you typed; **↓ ↑** choose a page, **↩** opens it, **⌘↩** in a new tab, **Esc** closes the list. With the field untouched, ↑ ↓ still open the commands. They can be turned off in the settings › General › Behaviour. The history is read only inside the browser.
 
-The favicon is the one the browser shows on the tab: it comes from the browser's cache, so it makes no requests to the site and updates by itself when it changes (for example an unread-message counter).
+The favicon is the one the browser shows on the tab: it comes from the browser's cache, so it makes no requests to the site and updates by itself when it changes (for example an unread-message counter). Firefox has no such service for extensions: there Islnd loads the favicon from the address the tab shows for it, usually from the browser's cache, and the history suggestions show a plain icon.
 
 On web pages **⌘L** (Ctrl+L on Windows and Linux) opens Islnd instead of the browser's address bar, also when you are typing inside an embedded editor; the extension's icon in the toolbar does the same. Where Islnd cannot appear (the new tab page and the browser's other pages, the extension store, excluded sites, full-screen video) ⌘L keeps its usual job and the icon is greyed out.
 
@@ -45,12 +49,12 @@ Type **/** at the start of the field and the list of commands opens above Islnd 
 
 | Group | Commands |
 |---|---|
-| Tabs | New tab, Duplicate tab, Pin tab / Unpin tab, Mute tab / Unmute tab, Reopen closed tab, Close tab, Close other tabs (pinned tabs stay), Move tab to new window, Add tab to split view / Exit split view (the tab and a new tab side by side; only in browser versions that let extensions do it), Previous tab, Next tab (the tab on the left or on the right; after the last one comes the first), Go to tab (the open tabs of every window, the most recently used first: type to filter them, **↩** or a click goes to the selected one, **Esc** closes) |
+| Tabs | New tab, Duplicate tab, Pin tab / Unpin tab, Mute tab / Unmute tab, Reopen closed tab, Close tab, Close other tabs (pinned tabs stay), Move tab to new window, Add tab to split view / Exit split view (the tab and a new tab side by side; only in browser versions that let extensions do it, not in Firefox), Previous tab, Next tab (the tab on the left or on the right; after the last one comes the first), Go to tab (the open tabs of every window, the most recently used first: type to filter them, **↩** or a click goes to the selected one, **Esc** closes) |
 | Copy | Copy URL, Copy clean URL (without tracking parameters such as `utm_…`, `fbclid`, `gclid`), Copy link (pastes as the page title linked to its address in mail and documents; as the plain address elsewhere) |
 | Navigation | Back, Forward, Reload, Hard reload (skips the cache), Home |
 | Page | Zoom in, Zoom out, Reset zoom, Print, Screenshot, Full page screenshot, Scroll to top, Scroll to bottom |
 | Bookmarks | Bookmark page (into the bookmarks bar) / Remove bookmark |
-| Browser | New window, New private window, History, Downloads, Bookmarks, Extensions, Browser settings |
+| Browser | New window, New private window, History, Downloads, Bookmarks, Extensions, Browser settings (Firefox lets no extension open its own pages: there only New window and New private window, which needs Islnd allowed in private windows) |
 | Islnd | Islnd settings, Minimize Islnd / Restore Islnd, Hide Islnd / Show Islnd, Move Islnd to top / Move Islnd to bottom (the Position setting), Switch to dark theme / Switch to light theme (the Theme setting; from Automatic, the opposite of the one shown), Hide on this site (adds the site to the excluded sites: Islnd leaves its open tabs at once) |
 
 In the settings › **Commands** each command can be turned off or moved: the list shows them in that order, and while you type the best matches come first. On the right of a command the list shows its shortcut, when there is one: the browser's default shortcut for the same action (on Windows and Linux they use Ctrl and Alt), or Islnd's own.
@@ -71,7 +75,7 @@ Names that depend on the tab follow it: on a pinned tab the list shows Unpin tab
 
 ## Settings
 
-Right-click the Islnd icon in the toolbar › **Options**, or open the extensions page › Islnd › **Details** › **Extension options**. The page has two tabs: **General**, with everything in the table below except Commands, and **Commands**, with the "/" commands and the links. Every change is saved automatically, with a short "Saved" at the bottom of the window, and applies straight away to open tabs, without reloading them; the preview at the top of General shows the result.
+Right-click the Islnd icon in the toolbar › **Options**, or open the extensions page › Islnd › **Details** › **Extension options** (in Firefox: the add-ons manager › Islnd › **Options**); the Islnd settings command opens it too. The page has two tabs: **General**, with everything in the table below except Commands, and **Commands**, with the "/" commands and the links. Every change is saved automatically, with a short "Saved" at the bottom of the window, and applies straight away to open tabs, without reloading them; the preview at the top of General shows the result.
 
 | Setting | What it changes |
 |---|---|

@@ -22,6 +22,7 @@ Islnd does not collect, send or sell any data. It has no server, no account, no 
 
 - Searches go to the browser's default search engine, through the browser.
 - When you add a link in the settings, Islnd reads that page's title and favicon from the site, without cookies.
+- Where the browser offers extensions no favicon service, Islnd loads the current tab's favicon from the address the browser shows for it, usually from its own cache.
 - Islnd makes no other requests.
 
 ## Contact
