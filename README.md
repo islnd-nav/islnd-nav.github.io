@@ -45,7 +45,7 @@ Type **/** at the start of the field and the list of commands opens above Islnd 
 
 | Group | Commands |
 |---|---|
-| Tabs | New tab, Duplicate tab, Pin tab / Unpin tab, Mute tab / Unmute tab, Reopen closed tab, Close tab, Close other tabs (pinned tabs stay), Move tab to new window, Add tab to split view / Exit split view (the tab and a new tab side by side; only in browser versions that let extensions do it), Previous tab, Next tab (the tab on the left or on the right; after the last one comes the first), Move to tab (the open tabs of every window, the most recently used first: type to filter them, **↩** or a click goes to the selected one, **Esc** closes) |
+| Tabs | New tab, Duplicate tab, Pin tab / Unpin tab, Mute tab / Unmute tab, Reopen closed tab, Close tab, Close other tabs (pinned tabs stay), Move tab to new window, Add tab to split view / Exit split view (the tab and a new tab side by side; only in browser versions that let extensions do it), Previous tab, Next tab (the tab on the left or on the right; after the last one comes the first), Go to tab (the open tabs of every window, the most recently used first: type to filter them, **↩** or a click goes to the selected one, **Esc** closes) |
 | Copy | Copy URL, Copy clean URL (without tracking parameters such as `utm_…`, `fbclid`, `gclid`), Copy link (pastes as the page title linked to its address in mail and documents; as the plain address elsewhere) |
 | Navigation | Back, Forward, Reload, Hard reload (skips the cache), Home |
 | Page | Zoom in, Zoom out, Reset zoom, Print, Screenshot, Full page screenshot, Scroll to top, Scroll to bottom |
