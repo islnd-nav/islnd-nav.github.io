@@ -1,6 +1,6 @@
 # Islnd privacy policy
 
-Last updated: 18 November 2026
+Last updated: 22 November 2026
 
 Islnd does not collect, send or sell any data. It has no server, no account, no analytics and no ads.
 
@@ -27,4 +27,4 @@ Islnd does not collect, send or sell any data. It has no server, no account, no 
 
 ## Contact
 
-Questions and reports: [mail@marcogargano.com](mailto:mail@marcogargano.com)
+Questions and reports: [islnd@getapp.it](mailto:islnd@getapp.it)
