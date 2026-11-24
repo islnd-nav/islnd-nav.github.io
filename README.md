@@ -28,7 +28,7 @@ In Firefox, install Islnd from its page on [addons.mozilla.org](https://addons.m
 | Go back to a page you visited | Start typing: the matching pages of your history appear; **↓ ↑** choose, **↩** opens |
 | Run a command | Type **/** in the field, or press **↑** or **↓** before typing: see [Commands](#commands) |
 | Open in a new tab | The **+** button, or **⌘↩** while typing |
-| Close the tab | The **×** button on the right |
+| Close the tab | The **×** button, once added in the settings › Buttons |
 | Cancel | **Esc**, or click outside Islnd |
 | Back, forward, reload | Buttons on the left |
 | Go to the home page | The **Home** button (the house): opens the new tab page (in Firefox, in a new tab), or the page chosen in the settings |
@@ -75,7 +75,7 @@ Names that depend on the tab follow it: on a pinned tab the list shows Unpin tab
 
 ## Settings
 
-Right-click the Islnd icon in the toolbar › **Options**, or open the extensions page › Islnd › **Details** › **Extension options** (in Firefox: the add-ons manager › Islnd › **Options**); the Islnd settings command opens it too. The page has two tabs: **General**, with everything in the table below except Commands, and **Commands**, with the "/" commands and the links. Every change is saved automatically, with a short "Saved" at the bottom of the window, and applies straight away to open tabs, without reloading them; the preview at the top of General shows the result.
+Right-click the Islnd icon in the toolbar › **Options**, or open the extensions page › Islnd › **Details** › **Extension options** (in Firefox: the add-ons manager › Islnd › **Options**); the Islnd settings command opens it too. The page has three tabs: **General**, with everything in the table below except Buttons, Home page and Commands; **Buttons**, with those two; and **Commands**, with the "/" commands and the links. Every change is saved automatically, with a short "Saved" at the bottom of the window, and applies straight away to open tabs, without reloading them; the preview at the top of General and Buttons shows the result.
 
 | Setting | What it changes |
 |---|---|
@@ -84,7 +84,7 @@ Right-click the Islnd icon in the toolbar › **Options**, or open the extension
 | Width | 320 to 560 px at rest with the Default size; bigger sizes widen it in proportion |
 | Theme | Automatic (follows the system), light or dark |
 | Site favicon | Shows or hides the icon next to the domain |
-| Buttons | Which of back, forward, reload, home, new tab and close tab to show (close tab is off at first) |
+| Buttons | The buttons beside the address, in the bar's order: the ones above **Address** are on its left, the ones below on its right. Drag a row by its handle to move it, or select the handle and press ↑ ↓; **×** takes a button out of the bar and **More buttons** puts it back. The buttons: Back, Forward, Reload, Home, New tab, Close tab, Reopen closed tab, Duplicate tab, Go to tab, Bookmark page (a filled star on a bookmarked page), Copy URL, Screenshot, Scroll to top, Commands (opens the "/" list) and Theme. **Add a link** makes a button with the page's title as its name and the site's favicon: a click opens the page in the tab, ⌘-click in a new tab; these links are not in the "/" list, and their favicons are kept in this browser only. Up to 8 buttons; past the sixth, Islnd widens by a button's room for each. At first: Back, Forward, Reload and Home on the left, New tab on the right |
 | Home page | The page opened by the Home button; empty = the new tab page |
 | Hide while scrolling | When off, Islnd always stays visible |
 | History suggestions | The pages of your history that match what you type in the field |
@@ -100,12 +100,13 @@ Right-click the Islnd icon in the toolbar › **Options**, or open the extension
   "position": "bottom",
   "theme": "auto",
   "excludedSites": ["meet.google.com"],
+  "buttons": ["back", "forward", "address", "newtab", { "title": "Mail", "url": "https://mail.example.com/" }],
   "commands": ["close", "newtab", { "title": "GitHub", "url": "https://github.com/" }],
   "shortcuts": { "open": "⌘L", "minimize": "⇧⌘L", "https://github.com/": "⌥⌘G" }
 }
 ```
 
-`commands` lists the commands turned on, in their order, with links as title and address; all the others are turned off. `shortcuts` lists every shortcut in use, written as on a Mac or as on Windows and Linux (`Ctrl+Shift+L`); a command left out has none. An exported file also holds size, width, buttons, home page and the other switches. Anything missing from a file stays as it is, and what cannot be used (an unknown command, a shortcut already taken or the browser's own) is skipped and counted in the message. Not in the file: whether Islnd is minimized or hidden, and the links' favicons, read again from the sites.
+`buttons` lists the buttons in the bar's order, with `address` where the address is and links as title and address. `commands` lists the commands turned on, in their order, with links as title and address; all the others are turned off. `shortcuts` lists every shortcut in use, written as on a Mac or as on Windows and Linux (`Ctrl+Shift+L`); a command left out has none. An exported file also holds size, width, home page and the other switches. Anything missing from a file stays as it is, and what cannot be used (an unknown command, a shortcut already taken or the browser's own) is skipped and counted in the message. Not in the file: whether Islnd is minimized or hidden, and the links' favicons, read again from the sites.
 
 ## Shortcuts
 
