@@ -73,16 +73,22 @@ Please report this to https://github.com/markedjs/marked.`,e){let e=`<p>An error
 
 A floating bar at the bottom centre of every page: site favicon and domain, address, search, back, forward, reload, home, new tab, close tab and commands typed after \`/\`.
 
-It works in any Chromium-based browser that supports Manifest V3 extensions.
+
+It works in any Chromium-based browser that supports Manifest V3 extensions, and in Firefox 140 or later.
 
 ## Installation
 
-1. Open the browser's extensions page: type \`chrome://extensions\` in the address bar (Chromium-based browsers accept this address even when they use their own name for it).
-2. Turn on **Developer mode**.
-3. Click **Load unpacked** and choose this folder.
-4. Tabs that are already open get Islnd straight away, without reloading them.
+In a Chromium-based browser:
 
-After changing the files, click the reload icon on the extension's card in the extensions page.
+1. Download the zip of the [latest release](https://github.com/islnd-nav/islnd-nav.github.io/releases/latest) and unzip it.
+2. Open the browser's extensions page: type \`chrome://extensions\` in the address bar (Chromium-based browsers accept this address even when they use their own name for it).
+3. Turn on **Developer mode**.
+4. Click **Load unpacked** and choose the unzipped folder.
+5. Tabs that are already open get Islnd straight away, without reloading them.
+
+To update Islnd, unzip a newer release into the same folder and click the reload icon on the extension's card in the extensions page.
+
+In Firefox, install Islnd from its page on [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/islnd/): Firefox installs only extensions signed by Mozilla. Tabs that are already open get Islnd straight away there too.
 
 ## Usage
 
@@ -92,50 +98,54 @@ After changing the files, click the reload icon on the extension's card in the e
 | Go back to a page you visited | Start typing: the matching pages of your history appear; **↓ ↑** choose, **↩** opens |
 | Run a command | Type **/** in the field, or press **↑** or **↓** before typing: see [Commands](#commands) |
 | Open in a new tab | The **+** button, or **⌘↩** while typing |
-| Close the tab | The **×** button on the right |
+| Close the tab | The **×** button, once added in the settings › Buttons |
 | Cancel | **Esc**, or click outside Islnd |
 | Back, forward, reload | Buttons on the left |
-| Go to the home page | The **Home** button (the house): opens the new tab page, or the page chosen in the settings |
-| Bring back Islnd when hidden | Scroll up, or move the mouse to the bottom of the window |
+| Go to the home page | The **Home** button (the house): opens the new tab page (in Firefox, in a new tab), or the page chosen in the settings |
+| Bring back Islnd after it slides away | Scroll up, or move the mouse to the bottom of the window |
 | Minimize or restore Islnd | **⇧⌘L** (Ctrl+Shift+L on Windows and Linux), or the key chosen in the settings |
 
 Resting the mouse on a button shows its name. Islnd slides away when you scroll down and comes back when you scroll up. Searches use the browser's default search engine.
 
-**History suggestions.** As you type an address or a search (not a "/" command), up to 10 pages of your history that match it appear, with favicon, title and the full address underneath: first the addresses that start with what you typed (\`git\` → github.com), then those with a word that does, then any match, the most visited and recent first. Nothing is selected at first, so **↩** goes to what you typed; **↓ ↑** choose a page, **↩** opens it, **⌘↩** in a new tab, **Esc** closes the list. With the field untouched, ↑ ↓ still open the commands. They work in the shortcut window too, and can be turned off in the settings › General › Behaviour. The history is read only inside the browser.
+**History suggestions.** As you type an address or a search (not a "/" command), up to 10 pages of your history that match it appear, with favicon, title and the full address underneath: first the addresses that start with what you typed (\`git\` → github.com), then those with a word that does, then any match, the most visited and recent first. Nothing is selected at first, so **↩** goes to what you typed; **↓ ↑** choose a page, **↩** opens it, **⌘↩** in a new tab, **Esc** closes the list. With the field untouched, ↑ ↓ still open the commands. They can be turned off in the settings › General › Behaviour. The history is read only inside the browser.
 
-The favicon is the one the browser shows on the tab: it comes from the browser's cache, so it makes no requests to the site and updates by itself when it changes (for example an unread-message counter).
+The favicon is the one the browser shows on the tab: it comes from the browser's cache, so it makes no requests to the site and updates by itself when it changes (for example an unread-message counter). Firefox has no such service for extensions: there Islnd loads the favicon from the address the tab shows for it, usually from the browser's cache, and the history suggestions show a plain icon.
 
-On web pages **⌘L** (Ctrl+L on Windows and Linux) opens Islnd instead of the browser's address bar, also when you are typing inside an embedded editor. On the browser's new tab page (also the one a new window opens on) ⌘L keeps its usual job: there **⇧⌘K** opens a small window with the same field. It closes with **Esc**, ⌘L or a click elsewhere. The extension's icon in the toolbar does the same. On excluded sites Islnd is not loaded at all: ⌘L is the browser's again, and ⇧⌘K or the icon open the small window. On the browser's other pages (settings, history, extensions, Islnd's own settings...) Islnd stays off: its icon is greyed out and ⇧⌘K does nothing.
+On web pages **⌘L** (Ctrl+L on Windows and Linux) opens Islnd instead of the browser's address bar, also when you are typing inside an embedded editor; the extension's icon in the toolbar does the same. Where Islnd cannot appear (the new tab page and the browser's other pages, the extension store, excluded sites, full-screen video) ⌘L keeps its usual job and the icon is greyed out.
 
 ## Commands
 
-Type **/** at the start of the field and the list of commands opens above Islnd (below it when Islnd is at the top). **↑** or **↓** open it too, as long as nothing has been typed yet (the field still shows the page's address, or is empty). Keep typing to filter it: \`/dup\` finds Duplicate tab, \`/zoom\` the three zoom commands. **↑ ↓** (or Tab) choose, **↩** or a click runs, **Esc** closes. The commands work in the shortcut window too.
+Type **/** at the start of the field and the list of commands opens above Islnd (below it when Islnd is at the top). **↑** or **↓** open it too, as long as nothing has been typed yet (the field still shows the page's address, or is empty). Keep typing to filter it: \`/dup\` finds Duplicate tab, \`/zoom\` the three zoom commands. **↑ ↓** (or Tab) choose, **↩** or a click runs, **Esc** closes.
 
 | Group | Commands |
 |---|---|
-| Tabs | New tab, Duplicate tab, Pin tab / Unpin tab, Mute tab / Unmute tab, Reopen closed tab, Close tab, Close other tabs (pinned tabs stay), Move tab to new window, Previous tab, Next tab (the tab on the left or on the right; after the last one comes the first) |
+| Tabs | New tab, Duplicate tab, Pin tab / Unpin tab, Mute tab / Unmute tab, Reopen closed tab, Close tab, Close other tabs (pinned tabs stay), Move tab to new window, Add tab to split view / Exit split view (the tab and a new tab side by side; only in browser versions that let extensions do it, not in Firefox), Previous tab, Next tab (the tab on the left or on the right; after the last one comes the first), Go to tab (the open tabs of every window, the most recently used first: type to filter them, **↩** or a click goes to the selected one, **Esc** closes) |
 | Copy | Copy URL, Copy clean URL (without tracking parameters such as \`utm_…\`, \`fbclid\`, \`gclid\`), Copy link (pastes as the page title linked to its address in mail and documents; as the plain address elsewhere) |
 | Navigation | Back, Forward, Reload, Hard reload (skips the cache), Home |
 | Page | Zoom in, Zoom out, Reset zoom, Print, Screenshot, Full page screenshot, Scroll to top, Scroll to bottom |
 | Bookmarks | Bookmark page (into the bookmarks bar) / Remove bookmark |
-| Browser | New window, New private window, History, Downloads, Bookmarks, Extensions, Browser settings |
-| Islnd | Islnd settings, Minimize Islnd / Restore Islnd, Move Islnd to top / Move Islnd to bottom (the Position setting), Hide on this site (adds the site to the excluded sites: Islnd leaves its open tabs at once) |
+| Browser | New window, New private window, History, Downloads, Bookmarks, Extensions, Browser settings (Firefox lets no extension open its own pages: there only New window and New private window, which needs Islnd allowed in private windows) |
+| Islnd | Islnd settings, Minimize Islnd / Restore Islnd, Hide Islnd / Show Islnd, Move Islnd to top / Move Islnd to bottom (the Position setting), Switch to dark theme / Switch to light theme (the Theme setting; from Automatic, the opposite of the one shown), Hide on this site (adds the site to the excluded sites: Islnd leaves its open tabs at once) |
 
 In the settings › **Commands** each command can be turned off or moved: the list shows them in that order, and while you type the best matches come first. On the right of a command the list shows its shortcut, when there is one: the browser's default shortcut for the same action (on Windows and Linux they use Ctrl and Alt), or Islnd's own.
 
-**Shortcuts of Islnd.** The commands the browser has no shortcut for can have one of their own, set in the settings › Commands: click the key next to the command and press the combination (it needs ⌘, Ctrl on Windows and Linux), ⌫ removes it. By default Minimize Islnd is **⇧⌘L**, Copy URL **⌥⇧⌘C**, Screenshot **⇧⌘S**, Full page screenshot **⌥⇧⌘S** and Close other tabs **⌥⌘W**. A shortcut runs its command straight away, without opening the list, wherever ⌘L works (see [Shortcuts](#shortcuts)), also when the command is turned off in the list.
+**Presets.** At the top of the settings › Commands, **Preset** turns on a ready-made set of commands, in its order, and turns all the others off; links and shortcuts stay as they are. **Essentials**: Close tab, New tab, Duplicate tab, Reopen closed tab, Pin tab, Move tab to new window, Minimize Islnd, Move Islnd, Switch theme and Islnd settings; a new install starts with it. **All**: every command, in the default order. Any change by hand makes the list **Custom**. After a preset, the message at the bottom of the window offers **Undo** for a few seconds.
 
-**Links.** At the top of the settings › Commands, paste an address in **Add a link**: the link joins the list with the page's title (the site's name for a home page) and its favicon, both read from the site. Click the name to change it, drag the link like a command, give it a shortcut, or remove it. In the "/" list it is found by its name or its site; **↩** opens it in the tab, **⌘↩** in a new tab. Up to 20 links; their favicons are kept in this browser only.
+**Shortcuts of Islnd.** The commands the browser has no shortcut for can have one of their own, set in the settings › Commands: click the key next to the command and press the combination (it needs ⌘, Ctrl on Windows and Linux), ⌫ removes it. By default Minimize Islnd is **⇧⌘L**, Copy URL **⌥⇧⌘C**, Screenshot **⇧⌘S**, Full page screenshot **⌥⇧⌘S**, Close other tabs **⌥⌘W** and Move Islnd **⇧⌘K**. A shortcut runs its command straight away, without opening the list, wherever ⌘L works (see [Shortcuts](#shortcuts)), also when the command is turned off in the list.
 
-Names that depend on the tab follow it: on a pinned tab the list shows Unpin tab, on a bookmarked page Remove bookmark. After copying, zooming, pinning or muting, Islnd shows a short confirmation in place of the domain. In the shortcut window, the commands that need a web page (Print, Screenshot, Scroll, Hide on this site) are left out on the new tab page.
+**Links.** At the top of the settings › Commands, paste an address in **Add a link**: the link joins the top of the list with the page's title (the site's name for a home page) and its favicon, both read from the site. Click the name to change it, drag the link like a command, give it a shortcut, or remove it. In the "/" list it is found by its name or its site; **↩** opens it in the tab, **⌘↩** in a new tab. Up to 20 links; their favicons are kept in this browser only.
 
-**Screenshot** takes the visible part of the page, **Full page screenshot** the whole page from top to bottom: the page scrolls by itself, one screenful at a time, and the pieces are joined (on a long page it takes a few seconds). Islnd is never in the picture, and fixed bars (a site's header, a cookie banner) appear only once, at the top. On web apps where only a part of the window scrolls, the full page is that part. Very long pages stop at 32,767 screen pixels, the biggest image the browser can build (about 16,000 px of page on a Retina screen). The picture opens in a new tab, with **Copy** and **Save** (a PNG file named after the site and the time).
+Names that depend on the tab follow it: on a pinned tab the list shows Unpin tab, on a bookmarked page Remove bookmark. After copying, zooming, pinning or muting, Islnd shows a short confirmation in place of the domain.
+
+**Screenshot** takes the visible part of the page, **Full page screenshot** the whole page from top to bottom: the page scrolls by itself, one screenful at a time, and the pieces are joined (on a long page it takes a few seconds). Islnd is never in the picture, and fixed bars (a site's header, a cookie banner) appear only once, at the top. On web apps where only a part of the window scrolls, the full page is that part. Very long pages stop at 32,767 screen pixels, the biggest image the browser can build (about 16,000 px of page on a Retina screen). Switching to another tab while it works cancels it. The picture opens in a new tab, with **Copy** and **Save** (a PNG file named after the site and the time); the latest ten stay in the browser, on this device only, until newer ones replace them.
 
 **Minimize Islnd** shrinks Islnd to a small circle with the site's favicon, on every page and after reloading too, until **Restore Islnd**. Resting the mouse on the circle opens Islnd in full; it shrinks back shortly after the mouse leaves. ⌘L and a command's confirmation open it as well. The circle hides while scrolling like Islnd, and shows Islnd's icon when Site favicon is off.
 
+**Hide Islnd** takes Islnd out of sight on every page, after reloading too, until **Show Islnd**. ⌘L, the toolbar icon and the shortcuts keep working: Islnd shows while you type in it, and for a moment with a command's confirmation.
+
 ## Settings
 
-Right-click the Islnd icon in the toolbar › **Options**, or open the extensions page › Islnd › **Details** › **Extension options**. The page has two tabs: **General**, with everything in the table below except Commands, and **Commands**, with the "/" commands and the links. Every change is saved automatically, with a short "Saved" at the bottom of the window, and applies straight away to open tabs, without reloading them; the preview at the top of General shows the result.
+Right-click the Islnd icon in the toolbar › **Options**, or open the extensions page › Islnd › **Details** › **Extension options** (in Firefox: the add-ons manager › Islnd › **Options**); the Islnd settings command opens it too. The page has three tabs: **General**, with everything in the table below except Buttons, Home page and Commands; **Buttons**, with those two; and **Commands**, with the "/" commands and the links. Every change is saved automatically, with a short "Saved" at the bottom of the window, and applies straight away to open tabs, without reloading them; the preview at the top of General and Buttons shows the result.
 
 | Setting | What it changes |
 |---|---|
@@ -144,19 +154,34 @@ Right-click the Islnd icon in the toolbar › **Options**, or open the extension
 | Width | 320 to 560 px at rest with the Default size; bigger sizes widen it in proportion |
 | Theme | Automatic (follows the system), light or dark |
 | Site favicon | Shows or hides the icon next to the domain |
-| Buttons | Which of back, forward, reload, home, new tab and close tab to show (close tab is off at first) |
+| Buttons | The buttons beside the address, in the bar's order: the ones above **Address** are on its left, the ones below on its right. Drag a row by its handle to move it, or select the handle and press ↑ ↓; **×** takes a button out of the bar and **More buttons** puts it back. The buttons: Back, Forward, Reload, Home, New tab, Close tab, Reopen closed tab, Duplicate tab, Go to tab, Bookmark page (a filled star on a bookmarked page), Copy URL, Screenshot, Scroll to top, Commands (opens the "/" list) and Theme. **Add a link** makes a button with the page's title as its name and the site's favicon: a click opens the page in the tab, ⌘-click in a new tab; these links are not in the "/" list, and their favicons are kept in this browser only. Up to 8 buttons; past the sixth, Islnd widens by a button's room for each. At first: Back, Forward, Reload and Home on the left, New tab on the right |
 | Home page | The page opened by the Home button; empty = the new tab page |
 | Hide while scrolling | When off, Islnd always stays visible |
 | History suggestions | The pages of your history that match what you type in the field |
-| Excluded sites | Sites (subdomains included) where Islnd is not loaded at all; ⇧⌘K and the toolbar icon open the small window there. Taking a site off the list brings Islnd back to its open tabs without reloading them |
+| Excluded sites | Sites (subdomains included) where Islnd is not loaded at all. Taking a site off the list brings Islnd back to its open tabs without reloading them |
 | Shortcuts | The key that opens Islnd (⌘L): see [Shortcuts](#shortcuts) |
-| Commands | The "/" commands and your links in the list's order. Each command has a switch (the ones turned off leave the list; their shortcuts keep working) and, when the browser has none, a shortcut of Islnd. Drag a row by its handle to move it, or select the handle and press ↑ ↓; a command turned off moves below the ones on, as the "/" list leaves it out. At the top: **Add a link**, **Search commands** (shows only the ones whose name has what you type) and **All commands**, a switch that turns every command on or off at once |
+| Commands | The "/" commands and your links in the list's order. Each command has a switch (the ones turned off leave the list; their shortcuts keep working) and, when the browser has none, a shortcut of Islnd. Drag a row by its handle to move it, or select the handle and press ↑ ↓; a command turned off moves below the ones on, as the "/" list leaves it out. At the top: **Preset** (Essentials, All or Custom: see [Commands](#commands)), **Add a link** and **Search commands** (shows only the ones whose name has what you type) |
+
+**Export and import.** At the bottom of the settings, **Export settings** saves every setting in \`islnd-settings.json\`, to keep or to pass on; **Import settings** reads such a file and applies it at once, with **Undo** in the message for a few seconds. The file is plain JSON, readable and editable by hand:
+
+\`\`\`json
+{
+  "islnd": 1,
+  "position": "bottom",
+  "theme": "auto",
+  "excludedSites": ["meet.google.com"],
+  "buttons": ["back", "forward", "address", "newtab", { "title": "Mail", "url": "https://mail.example.com/" }],
+  "commands": ["close", "newtab", { "title": "GitHub", "url": "https://github.com/" }],
+  "shortcuts": { "open": "⌘L", "minimize": "⇧⌘L", "https://github.com/": "⌥⌘G" }
+}
+\`\`\`
+
+\`buttons\` lists the buttons in the bar's order, with \`address\` where the address is and links as title and address. \`commands\` lists the commands turned on, in their order, with links as title and address; all the others are turned off. \`shortcuts\` lists every shortcut in use, written as on a Mac or as on Windows and Linux (\`Ctrl+Shift+L\`); a command left out has none. An exported file also holds size, width, home page and the other switches. Anything missing from a file stays as it is, and what cannot be used (an unknown command, a shortcut already taken or the browser's own) is skipped and counted in the message. Not in the file: whether Islnd is minimized or hidden, and the links' favicons, read again from the sites.
 
 ## Shortcuts
 
-- **⌘L** opens Islnd (Ctrl+L on Windows and Linux); the commands and links have their own shortcuts, such as **⇧⌘L** for Minimize Islnd (see [Commands](#commands)). Islnd handles them itself, on web pages (embedded editors included) and in the shortcut window, before the page's and the browser's own shortcuts. Browsers never let an extension take over their own keys on their own pages, so there they keep the browser's meaning. On excluded sites, where Islnd is not loaded, and during full-screen video, all of them are left to the page.
+- **⌘L** opens Islnd (Ctrl+L on Windows and Linux); the commands and links have their own shortcuts, such as **⇧⌘L** for Minimize Islnd (see [Commands](#commands)). Islnd handles them itself, on web pages (embedded editors included), before the page's and the browser's own shortcuts. Browsers never let an extension take over their own keys on their own pages, so there they keep the browser's meaning. On excluded sites, where Islnd is not loaded, and during full-screen video, all of them are left to the page.
 - To change them, open the settings › **Shortcuts** (⌘L) or **Commands** (the others), click the key and press the new combination: it needs ⌘ (Ctrl on Windows and Linux) together with another key, and it can add ⇧, ⌥ or ⌃. **Esc** cancels, **⌫** removes a command's shortcut. Not accepted: the keys for editing text (⌘A, ⌘C, ⌘V, ⌘X, ⌘Z), a combination already used by Islnd or by one of the browser's shortcuts listed in Commands, and the browser's keys that never reach a page, such as ⌘T or ⌘W.
-- **⇧⌘K** is the browser shortcut: it works on every page, the browser's own included. Change it at \`chrome://extensions/shortcuts\` (there is also a **Change shortcut** button in the settings). If the key is already used by the browser or another extension, the browser does not assign it and the field stays empty: choose one there.
 `,lt={commands:`/docs/commands`,settings:`/docs/settings`,shortcuts:`/docs/shortcuts`},ut=ct.split(/^## /m),dt=ut[0]??``,Q=Object.fromEntries(ut.slice(1).map(e=>[(e.split(`
 `)[0]??``).trim().toLowerCase(),`# `+e]));function $(e){return Z.parse(e.replace(/\]\(#([a-z-]+)\)/g,(e,t)=>lt[t]?`](${lt[t]})`:e),{async:!1}).replace(/<h([23])>(.*?)<\/h\1>/g,(e,t,n)=>`<h${t} id="${n.toLowerCase().replace(/<[^>]+>/g,``).replace(/[^a-z0-9]+/g,`-`).replace(/^-|-$/g,``)}">${n}</h${t}>`)}var ft={overview:$(dt+`
 #`+Q.installation+`
