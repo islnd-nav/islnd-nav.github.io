@@ -1,1 +1,0 @@
-import{d as e}from"./link-DJpx_sUh.js";import{n as t,t as n}from"./docs-CKbT18Br.js";var r=e(),i=()=>(0,r.jsx)(t,{html:n.overview});export{i as component};
